@@ -1,4 +1,4 @@
-# Proyecto de Análisis Estadístico
+# Proyecto de la materia Estadística
 
 Este proyecto contiene análisis estadísticos de diferentes conjuntos de datos, implementados en Python. Incluye 4 ejercicios prácticos que utilizan módulos reutilizables para realizar análisis exploratorio de datos.
 
