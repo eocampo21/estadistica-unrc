@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from valoresAtipicos import valores_atipicos
 from resumenDescriptivo import resumen_descriptivo
+from diagramaDispersion import diagrama_dispersion
 
 # Configuración para mostrar el gráfico en el entorno de la notebook
 sns.set_style('whitegrid')
@@ -142,15 +143,12 @@ print("-" * 30)
 print("\nh) Relación entre Peso y Altura:")
 df_filtrado = df.dropna(subset=['Peso_lb', 'Altura_cm'])
 
-plt.figure(figsize=(8, 6))
 # Genera un Diagrama de Dispersión
-sns.scatterplot(x='Peso_lb', y='Altura_cm', data=df_filtrado)
-plt.title('Relación entre Peso y Altura')
-plt.xlabel('Peso (lb)')
-plt.ylabel('Altura (cm)')
-plt.show()
-
-correlacion = df_filtrado['Peso_lb'].corr(df_filtrado['Altura_cm'])
-print(f"\nCoeficiente de correlación entre Peso y Altura: {correlacion:.2f}")
+r_peso_altura = diagrama_dispersion(
+    df=df_filtrado, 
+    x_col='Peso_lb', 
+    y_col='Altura_cm', 
+    titulo='Relación Lineal entre Peso y Altura de Estudiantes'
+)
 # Conclusión:  sí, el análisis sugiere una fuerte dependencia directa entre las variables,
 # Esto es biológicamente esperado, ya que las personas más altas suelen tener mayor masa corporal. 

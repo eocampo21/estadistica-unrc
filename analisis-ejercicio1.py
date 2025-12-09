@@ -3,6 +3,7 @@ from boxplot import plot_boxplot
 from resumenDescriptivo import resumen_descriptivo
 from histograma import histograma
 import pandas as pd
+from valoresAtipicos import valores_atipicos
 
 # Los datos siguientes corresponden al tiempo ( seg.) necesario para procesar 25 trabajos en una CPU.
 
@@ -76,6 +77,9 @@ histograma(
     xlabel='Tiempo (segundos)',
     ylabel='Cantidad de trabajos procesados'
 )
+
+# valores_atipicos
+valores_atipicos(q3_val,q1_val,datosArray)
 
 # Boxplots
 plot_boxplot(
